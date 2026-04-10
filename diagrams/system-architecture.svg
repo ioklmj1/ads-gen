@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace">
+  <defs>
+    <style>
+      .title { font-size: 18px; font-weight: 700; fill: #1a1a1a; }
+      .subtitle { font-size: 11px; fill: #666; }
+      .box-label { font-size: 11px; font-weight: 600; fill: #fff; }
+      .box-sublabel { font-size: 9px; fill: rgba(255,255,255,0.8); }
+      .gate-label { font-size: 10px; font-weight: 600; fill: #E8590C; }
+      .api-label { font-size: 9px; font-weight: 600; fill: #1a1a1a; }
+      .api-sublabel { font-size: 8px; fill: #666; }
+      .section-label { font-size: 9px; font-weight: 600; fill: #999; letter-spacing: 1.5px; text-transform: uppercase; }
+      .connector { stroke: #ccc; stroke-width: 1.5; fill: none; }
+      .connector-bold { stroke: #002FA7; stroke-width: 2; fill: none; }
+      .gate-line { stroke: #E8590C; stroke-width: 2; stroke-dasharray: 6,3; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="1100" fill="#FAFAF5" rx="8"/>
+
+  <!-- Title -->
+  <text x="450" y="45" text-anchor="middle" class="title">/ads-gen System Architecture</text>
+  <text x="450" y="65" text-anchor="middle" class="subtitle">Multi-agent orchestration + harness. Activated, orchestrated, and enforced by Opus 4.6.</text>
+
+  <!-- BRIEF -->
+  <rect x="350" y="90" width="200" height="40" rx="6" fill="#1a1a1a"/>
+  <text x="450" y="115" text-anchor="middle" class="box-label">YOUR BRIEF</text>
+
+  <line x1="450" y1="130" x2="450" y2="160" class="connector-bold" marker-end="url(#arrow-blue)"/>
+
+  <!-- OPUS ORCHESTRATOR -->
+  <rect x="275" y="160" width="350" height="55" rx="8" fill="#002FA7"/>
+  <text x="450" y="183" text-anchor="middle" class="box-label">OPUS 4.6</text>
+  <text x="450" y="200" text-anchor="middle" class="box-sublabel">Orchestrator + Enforcer + QC in one context window</text>
+
+  <line x1="450" y1="215" x2="450" y2="245" class="connector-bold" marker-end="url(#arrow-blue)"/>
+
+  <!-- PRE-PRODUCTION SECTION -->
+  <text x="50" y="260" class="section-label">PRE-PRODUCTION</text>
+
+  <rect x="120" y="270" width="160" height="40" rx="5" fill="#002FA7" opacity="0.75"/>
+  <text x="200" y="290" text-anchor="middle" class="box-label" font-size="10">Creative Strategist</text>
+  <text x="200" y="302" text-anchor="middle" class="box-sublabel">Territory + Hooks</text>
+
+  <rect x="370" y="270" width="160" height="40" rx="5" fill="#002FA7" opacity="0.75"/>
+  <text x="450" y="290" text-anchor="middle" class="box-label" font-size="10">Copywriter</text>
+  <text x="450" y="302" text-anchor="middle" class="box-sublabel">Copy + CTA + Tagline</text>
+
+  <rect x="620" y="270" width="160" height="40" rx="5" fill="#002FA7" opacity="0.75"/>
+  <text x="700" y="290" text-anchor="middle" class="box-label" font-size="10">Art Director</text>
+  <text x="700" y="302" text-anchor="middle" class="box-sublabel">Visual specs + Brand</text>
+
+  <!-- Parallel indicator -->
+  <text x="310" y="285" text-anchor="middle" class="api-sublabel" fill="#002FA7">||</text>
+  <text x="560" y="285" text-anchor="middle" class="api-sublabel" fill="#002FA7">||</text>
+
+  <!-- QC GATE 1 -->
+  <line x1="80" y1="330" x2="820" y2="330" class="gate-line"/>
+  <text x="450" y="348" text-anchor="middle" class="gate-label">QC GATE: Creative + Brand Compliance + Visual Signature</text>
+
+  <!-- PRODUCTION SECTION -->
+  <text x="50" y="385" class="section-label">PRODUCTION</text>
+
+  <rect x="120" y="395" width="160" height="40" rx="5" fill="#002FA7" opacity="0.75"/>
+  <text x="200" y="415" text-anchor="middle" class="box-label" font-size="10">Screenwriter</text>
+  <text x="200" y="427" text-anchor="middle" class="box-sublabel">Script + Beats</text>
+
+  <rect x="370" y="395" width="160" height="55" rx="5" fill="#002FA7" opacity="0.85"/>
+  <text x="450" y="415" text-anchor="middle" class="box-label" font-size="10">Cinematographer</text>
+  <text x="450" y="427" text-anchor="middle" class="box-sublabel">Persistent + Recallable</text>
+  <text x="450" y="440" text-anchor="middle" class="box-sublabel">Camera + Lens + Composition</text>
+
+  <rect x="620" y="395" width="160" height="40" rx="5" fill="#E8590C" opacity="0.85"/>
+  <text x="700" y="415" text-anchor="middle" class="box-label" font-size="10">Hook Lab</text>
+  <text x="700" y="427" text-anchor="middle" class="box-sublabel">First 1.5s optimization</text>
+
+  <!-- QC GATE 2 -->
+  <line x1="80" y1="470" x2="820" y2="470" class="gate-line"/>
+  <text x="450" y="488" text-anchor="middle" class="gate-label">QC GATE: Storyboard + Hook + Continuity</text>
+
+  <!-- STORYBOARD -->
+  <text x="50" y="520" class="section-label">STORYBOARD GENERATION</text>
+
+  <rect x="275" y="530" width="350" height="40" rx="5" fill="#002FA7" opacity="0.6"/>
+  <text x="450" y="550" text-anchor="middle" class="box-label" font-size="10">Gemini API (watermark-free storyboard images)</text>
+  <text x="450" y="562" text-anchor="middle" class="box-sublabel">Character + Product + Location consistency via /production-consistency</text>
+
+  <!-- QC GATE 3 -->
+  <line x1="80" y1="590" x2="820" y2="590" class="gate-line"/>
+  <text x="450" y="608" text-anchor="middle" class="gate-label">QC GATE: Storyboard Image Quality (before compute-intensive clip gen)</text>
+
+  <!-- PARALLEL WAVE DISPATCHING -->
+  <text x="50" y="640" class="section-label">PARALLEL WAVE DISPATCHING</text>
+
+  <rect x="275" y="650" width="350" height="35" rx="5" fill="#1a1a1a"/>
+  <text x="450" y="672" text-anchor="middle" class="box-label" font-size="10">5 clips per wave (API concurrency limit)</text>
+
+  <!-- API TOOLS -->
+  <text x="50" y="720" class="section-label">SOTA SPECIALIST APIs (THE HANDS)</text>
+
+  <rect x="65" y="735" width="110" height="50" rx="5" fill="#f5f5f0" stroke="#ccc" stroke-width="1"/>
+  <text x="120" y="755" text-anchor="middle" class="api-label">Kling</text>
+  <text x="120" y="768" text-anchor="middle" class="api-sublabel">Video gen</text>
+  <text x="120" y="778" text-anchor="middle" class="api-sublabel">Lipsync</text>
+
+  <rect x="195" y="735" width="110" height="50" rx="5" fill="#f5f5f0" stroke="#ccc" stroke-width="1"/>
+  <text x="250" y="755" text-anchor="middle" class="api-label">Gemini</text>
+  <text x="250" y="768" text-anchor="middle" class="api-sublabel">Image gen</text>
+  <text x="250" y="778" text-anchor="middle" class="api-sublabel">Storyboards</text>
+
+  <rect x="325" y="735" width="110" height="50" rx="5" fill="#f5f5f0" stroke="#ccc" stroke-width="1"/>
+  <text x="380" y="755" text-anchor="middle" class="api-label">Hume</text>
+  <text x="380" y="768" text-anchor="middle" class="api-sublabel">Emotional</text>
+  <text x="380" y="778" text-anchor="middle" class="api-sublabel">TTS</text>
+
+  <rect x="455" y="735" width="110" height="50" rx="5" fill="#f5f5f0" stroke="#ccc" stroke-width="1"/>
+  <text x="510" y="755" text-anchor="middle" class="api-label">ElevenLabs</text>
+  <text x="510" y="768" text-anchor="middle" class="api-sublabel">TTS + SFX</text>
+  <text x="510" y="778" text-anchor="middle" class="api-sublabel">+ Music</text>
+
+  <rect x="585" y="735" width="110" height="50" rx="5" fill="#f5f5f0" stroke="#ccc" stroke-width="1"/>
+  <text x="640" y="755" text-anchor="middle" class="api-label">Sync</text>
+  <text x="640" y="768" text-anchor="middle" class="api-sublabel">High-quality</text>
+  <text x="640" y="778" text-anchor="middle" class="api-sublabel">Lipsync</text>
+
+  <rect x="715" y="735" width="110" height="50" rx="5" fill="#f5f5f0" stroke="#ccc" stroke-width="1"/>
+  <text x="770" y="755" text-anchor="middle" class="api-label">Minimax</text>
+  <text x="770" y="768" text-anchor="middle" class="api-sublabel">Music gen</text>
+  <text x="770" y="778" text-anchor="middle" class="api-sublabel">5-min scores</text>
+
+  <!-- QC GATE 4 -->
+  <line x1="80" y1="810" x2="820" y2="810" class="gate-line"/>
+  <text x="450" y="828" text-anchor="middle" class="gate-label">QC GATE: Clip Quality + Audio Cue + Mix</text>
+
+  <!-- PICTURE LOCK -->
+  <text x="50" y="865" class="section-label">POST-PRODUCTION</text>
+
+  <rect x="275" y="875" width="350" height="40" rx="5" fill="#1a1a1a"/>
+  <text x="450" y="895" text-anchor="middle" class="box-label" font-size="10">PICTURE LOCK</text>
+  <text x="450" y="907" text-anchor="middle" class="box-sublabel">Audio only begins after visuals are approved</text>
+
+  <!-- QC GATE 5 -->
+  <line x1="80" y1="935" x2="820" y2="935" class="gate-line"/>
+  <text x="450" y="953" text-anchor="middle" class="gate-label">QC GATE: Audio Positioning + Final Mix</text>
+
+  <!-- FINAL OUTPUT -->
+  <rect x="300" y="975" width="300" height="50" rx="8" fill="#002FA7"/>
+  <text x="450" y="998" text-anchor="middle" class="box-label">FINAL 16:9 MASTER</text>
+  <text x="450" y="1015" text-anchor="middle" class="box-sublabel">One brief in. One finished commercial out.</text>
+
+  <!-- Legend -->
+  <rect x="65" y="1050" width="12" height="12" rx="2" fill="#002FA7"/>
+  <text x="85" y="1061" class="api-sublabel">Opus-directed agent</text>
+
+  <line x1="160" y1="1056" x2="190" y2="1056" class="gate-line"/>
+  <text x="200" y="1061" class="api-sublabel">Mandatory QC gate (pass/fail/refine)</text>
+
+  <rect x="370" y="1050" width="12" height="12" rx="2" fill="#f5f5f0" stroke="#ccc" stroke-width="1"/>
+  <text x="390" y="1061" class="api-sublabel">External SOTA API (the hands)</text>
+
+  <rect x="530" y="1050" width="12" height="12" rx="2" fill="#E8590C"/>
+  <text x="550" y="1061" class="api-sublabel">Hook Lab (first 1.5s)</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#002FA7"/>
+    </marker>
+  </defs>
+</svg>
