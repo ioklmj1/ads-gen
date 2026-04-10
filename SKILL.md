@@ -999,7 +999,7 @@ After receiving the concept, present the user with the following intake using `A
 
 **Question 1: Genre Selection (MANDATORY — two-step AskUserQuestion)**
 
-Use the **two-step AskUserQuestion genre funnel** defined in `/Users/pyl/.claude/skills/vid-gen/SKILL.md` under "STEP 1: Genre Selection". The flow is:
+Use the **two-step AskUserQuestion genre funnel** defined in `~/.claude/skills/vid-gen/SKILL.md` under "STEP 1: Genre Selection". The flow is:
 
 1. **Step 1A — Visual Temperature** (AskUserQuestion with 4 options + previews): Warm & Intimate, Cool & Atmospheric, Raw & Authentic, Grand & Mythic
 2. **Step 1B — Specific Genre** (AskUserQuestion with 2-3 options + camera/lens/color spec previews, based on Step 1A answer)
@@ -1011,7 +1011,7 @@ The selected genre controls ALL downstream generation:
 - Music and VO defaults are pre-filled from the genre's `audio_defaults`
 - If skipped, analyze the story concept and pick the best-fit genre automatically — but tell the user which genre you chose
 
-**The full genre preset definitions live in `/Users/pyl/.claude/skills/vid-gen/SKILL.md` under "Genre Cinematography Presets".** Each preset specifies exact camera model, lens, aperture, film stock, color grading, lighting, DOF, motion defaults, music mood, and VO tone.
+**The full genre preset definitions live in `~/.claude/skills/vid-gen/SKILL.md` under "Genre Cinematography Presets".** Each preset specifies exact camera model, lens, aperture, film stock, color grading, lighting, DOF, motion defaults, music mood, and VO tone.
 
 **Question 2: "How long should the film be?"** (single-select)
 - header: "Duration"
