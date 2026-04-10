@@ -45,9 +45,9 @@ echo "EPIDEMIC: $(echo $EPIDEMIC_SOUND_API_KEY | head -c 10)"
 
 ### Tools
 - `ffmpeg` / `ffprobe`: `brew install ffmpeg`
-- Node.js scripts: `~/.claude/skills/vid-gen/kling-video.js`, `~/.claude/skills/vid-gen/minimax-audio.js`
-- Gemini API: `~/.claude/skills/img-ctrl-api/gemini-api.js`
-- Gemini Web (drafting only): `~/.claude/skills/img-ctrl/gemini-upload.js`
+- Node.js scripts: `~/.claude/skills/ads-gen/scripts/tools/kling-video.js`, `~/.claude/skills/ads-gen/scripts/tools/minimax-audio.js`
+- Gemini API: `~/.claude/skills/ads-gen/scripts/tools/gemini-api.js`
+- Gemini Web (drafting only): `~/.claude/skills/ads-gen/scripts/tools/gemini-upload.js`
 
 ---
 
@@ -1331,7 +1331,7 @@ There is NO "face only" selector in the API (the web UI has one, but it's not ex
 
 ```bash
 # Create element from TIGHT FACE CROP (no wardrobe visible)
-node ~/.claude/skills/vid-gen/kling-video.js --elements --create \
+node ~/.claude/skills/ads-gen/scripts/tools/kling-video.js --elements --create \
   --name "{character}" \
   --image {project}/pre-production/characters/{name}_face_ref.png \
   --tag "Character" \
@@ -1807,7 +1807,7 @@ When the film has dialogue, assign a consistent Kling voice to each speaking cha
 **Voice Casting Algorithm:**
 1. Read unique characters from `dialogue_sheet.json`
 2. For each character, match to a voice from the Kling VOICE_CATALOG based on gender, age, and personality
-3. List available voices: `node ~/.claude/skills/vid-gen/kling-video.js --list-voices`
+3. List available voices: `node ~/.claude/skills/ads-gen/scripts/tools/kling-video.js --list-voices`
 
 **Voice Catalog archetypes (for English dialogue):**
 
@@ -2168,7 +2168,7 @@ Gemini API supports multiple images in a single prompt via `--image` (primary) +
 
 **Example — a frame showing a racer on a specific vehicle at a track:**
 ```bash
-node ~/.claude/skills/img-ctrl-api/gemini-api.js \
+node ~/.claude/skills/ads-gen/scripts/tools/gemini-api.js \
   --image pre-production/products/scooter_v1_4view.png \
   --extra-images pre-production/characters/alex_face_ref.png,pre-production/characters/alex_wardrobe_tanktop.png,pre-production/locations/loc_amateur_track.png \
   --prompt-file /tmp/shot_prompt.txt \
@@ -2187,7 +2187,7 @@ For every frame in storyboard.json where `end_frame_prompt` is non-null, generat
 
 ```bash
 # Generate end frame using same references as the start frame
-node ~/.claude/skills/img-ctrl-api/gemini-api.js \
+node ~/.claude/skills/ads-gen/scripts/tools/gemini-api.js \
   --image pre-production/characters/runner_face_ref.png \
   --extra-images pre-production/locations/trail_establishing.png \
   --prompt-file /tmp/shot05_end_prompt.txt \
@@ -2281,7 +2281,7 @@ Fix all FAIL items before proceeding. Regenerate or edit frames as needed.
 Once frames are approved, convert each to clean versions using `/img-ctrl-api`:
 
 ```bash
-node ~/.claude/skills/img-ctrl-api/gemini-api.js \
+node ~/.claude/skills/ads-gen/scripts/tools/gemini-api.js \
   --image "{project}/storyboard/shot01.png" \
   --prompt-file /tmp/reproduce-prompt.txt \
   --output "{project}/storyboard_clean/" \
@@ -2482,7 +2482,7 @@ Kling has NO API parameter for motion velocity or "mid-action" state. Every clip
 
 **Video extension for clips that need more time:** If a generated clip's action doesn't complete within its duration, extend it:
 ```bash
-node ~/.claude/skills/vid-gen/kling-video.js --extend --task-id {original_task_id} \
+node ~/.claude/skills/ads-gen/scripts/tools/kling-video.js --extend --task-id {original_task_id} \
   --prompt "Continue the action, character finishes turning" --output {project}/clips/
 ```
 
@@ -2571,7 +2571,7 @@ Golden hour light filtering through autumn canopy. Warm amber tones throughout. 
 ```bash
 # The TTS audio is provided to Kling alongside the storyboard image
 # The character is PERFORMING the line from the first frame
-node ~/.claude/skills/vid-gen/kling-video.js --lip-sync \
+node ~/.claude/skills/ads-gen/scripts/tools/kling-video.js --lip-sync \
   --video storyboard_clean/shotNN.png \
   --audio voice/DL_NN.mp3 \
   --output clips/ \
@@ -2581,13 +2581,13 @@ node ~/.claude/skills/vid-gen/kling-video.js --lip-sync \
 If `--lip-sync` with an image input isn't supported, use a two-call approach:
 ```bash
 # Step 1: Generate the silent clip normally
-node ~/.claude/skills/vid-gen/kling-video.js \
+node ~/.claude/skills/ads-gen/scripts/tools/kling-video.js \
   --image storyboard_clean/shotNN.png \
   --prompt "CHARACTER IS SPEAKING: [dialogue text]. [Full 4-layer prompt with speaking action described]" \
   --duration 5 --tier premium --output clips/
 
 # Step 2: IMMEDIATELY lipsync with the TTS audio (before any other clips)
-node ~/.claude/skills/vid-gen/kling-video.js --lip-sync \
+node ~/.claude/skills/ads-gen/scripts/tools/kling-video.js --lip-sync \
   --video clips/shotNN_video.mp4 \
   --audio voice/DL_NN.mp3 \
   --output clips/

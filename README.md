@@ -183,14 +183,20 @@ This skill is BYOK (Bring Your Own Keys). You connect your own accounts to the S
 ## Install
 
 ```bash
-curl -sL https://raw.githubusercontent.com/ioklmj1/ads-gen/main/install.sh | bash
+curl -sL https://raw.githubusercontent.com/ioklmj1/ads-gen/main/scripts/install.sh | bash
 ```
+
+This installs the skill file and all bundled tool scripts (Kling, Minimax, Gemini API wrappers). Everything the skill needs lives in one directory.
 
 Or manually:
 
 ```bash
-mkdir -p ~/.claude/skills/ads-gen
+mkdir -p ~/.claude/skills/ads-gen/scripts/tools
 curl -sL https://raw.githubusercontent.com/ioklmj1/ads-gen/main/SKILL.md -o ~/.claude/skills/ads-gen/SKILL.md
+curl -sL https://raw.githubusercontent.com/ioklmj1/ads-gen/main/scripts/tools/kling-video.js -o ~/.claude/skills/ads-gen/scripts/tools/kling-video.js
+curl -sL https://raw.githubusercontent.com/ioklmj1/ads-gen/main/scripts/tools/minimax-audio.js -o ~/.claude/skills/ads-gen/scripts/tools/minimax-audio.js
+curl -sL https://raw.githubusercontent.com/ioklmj1/ads-gen/main/scripts/tools/gemini-api.js -o ~/.claude/skills/ads-gen/scripts/tools/gemini-api.js
+curl -sL https://raw.githubusercontent.com/ioklmj1/ads-gen/main/scripts/tools/gemini-upload.js -o ~/.claude/skills/ads-gen/scripts/tools/gemini-upload.js
 ```
 
 Then open Claude Code and type `/ads-gen` followed by your brief.
